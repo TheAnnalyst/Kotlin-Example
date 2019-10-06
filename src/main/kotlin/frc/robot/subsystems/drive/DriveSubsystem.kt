@@ -9,5 +9,8 @@ object DriveSubsystem : FalconSubsystem() {
 
     val leftMotor: VictorSP = VictorSP(0)
     val rightMotor: VictorSP = VictorSP(1)
+    override fun lateInit() {
+        defaultCommand = DriveCommand()
+    }
 
 }
