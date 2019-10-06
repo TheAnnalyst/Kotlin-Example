@@ -26,8 +26,8 @@ class DriveCommand : FalconCommand(DriveSubsystem) {
         val wantedLeftOutput = forward + turn
         val wantedRightOutput = forward - turn
 
-        DriveSubsystem.leftMotor.speed = wantedLeftOutput
-        DriveSubsystem.rightMotor.speed = wantedRightOutput
+        DriveSubsystem.leftMotor.set(wantedLeftOutput)
+        DriveSubsystem.rightMotor.set(wantedRightOutput)
     }
 
     override fun end(interrupted: Boolean) {
