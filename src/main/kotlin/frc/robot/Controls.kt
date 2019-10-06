@@ -1,5 +1,6 @@
 package frc.robot
 
+import frc.robot.subsystems.drive.DriveCommand
 import org.ghrobotics.lib.wrappers.hid.* // ktlint-disable no-wildcard-imports
 
 object Controls {
@@ -8,7 +9,6 @@ object Controls {
     val driverFalconXbox = xboxController(0) {
         registerEmergencyMode()
     }
-
     fun update() {
         driverFalconXbox.update() // this polls all the buttons and stuff
     }
