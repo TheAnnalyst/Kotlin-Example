@@ -8,7 +8,9 @@ import org.ghrobotics.lib.mathematics.units.nativeunit.NativeUnit
 object DriveSubsystem : FalconSubsystem() {
 
     val leftMotor: VictorSP = VictorSP(0)
-    val rightMotor: VictorSP = VictorSP(1)
+    val rightMotor: VictorSP = VictorSP(1).apply {
+        this.inverted=true
+    }
     override fun lateInit() {
         defaultCommand = DriveCommand()
     }
