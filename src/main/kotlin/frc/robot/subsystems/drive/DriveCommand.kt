@@ -12,8 +12,8 @@ class DriveCommand : FalconCommand(DriveSubsystem) {
     override fun isFinished() = false
 
     override fun initialize() {
-        DriveSubsystem.leftMotor.speed = 0.0
-        DriveSubsystem.rightMotor.speed = 0.0
+        DriveSubsystem.leftMotor.setSpeed(0.0)
+        DriveSubsystem.rightMotor.setSpeed(0.0)
 
     }
 
@@ -25,13 +25,13 @@ class DriveCommand : FalconCommand(DriveSubsystem) {
         val wantedLeftOutput = forward + turn
         val wantedRightOutput = forward - turn
 
-        DriveSubsystem.leftMotor.speed = wantedLeftOutput
-        DriveSubsystem.rightMotor.speed = wantedRightOutput
+        DriveSubsystem.leftMotor.setSpeed(wantedLeftOutput)
+        DriveSubsystem.rightMotor.setSpeed(wantedRightOutput)
     }
 
     override fun end(interrupted: Boolean) {
-        DriveSubsystem.leftMotor.speed = 0.0
-        DriveSubsystem.rightMotor.speed = 0.0
+        DriveSubsystem.leftMotor.setSpeed(0.0)
+        DriveSubsystem.rightMotor.setSpeed(0.0)
     }
     companion object {
         private const val kDeadband = 0.05
