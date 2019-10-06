@@ -12,6 +12,7 @@ class DriveCommand : FalconCommand(DriveSubsystem) {
     override fun isFinished() = false
 
     override fun initialize() {
+        DriveSubsystem.rightMotor.inverted = true
         DriveSubsystem.leftMotor.speed = 0.0
         DriveSubsystem.rightMotor.speed = 0.0
 
